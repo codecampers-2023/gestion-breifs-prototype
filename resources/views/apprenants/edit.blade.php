@@ -112,7 +112,7 @@
 
                                     <div class="form-group">
                                         <label class="text-muted"
-                                            for="">{{ __('message.lieu_naissancee') }}</label>
+                                            for="">{{ __('message.date_naissance') }}</label>
                                         <input class="form-control rounded" value="{{ $edit->Date_naissance }}"
                                             type="date" placeholder="" name="Date_naissance">
                                         @error('Date_naissance')
@@ -133,7 +133,7 @@
 
                                 <div class="form-group">
                                     <label class="text-muted"
-                                        for="">{{ __('message.Lieu_naissance') }}</label>
+                                        for="">{{ __('message.lieu_naissance') }}</label>
                                     <input class="form-control rounded" value="{{ $edit->Lieu_naissance }}"
                                         type="text" placeholder="" name="Lieu_naissance">
                                     @error('Lieu_naissance')
@@ -141,7 +141,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="text-muted" for="">{{ __('message.Nom_arabe') }}</label>
+                                    <label class="text-muted" for="">{{ __('message.nom_arabe') }}</label>
                                     <input class="form-control rounded" type="text"
                                         value="{{ $edit->Nom_arabe }}" placeholder="" name="Nom_arabe">
                                     @error('Nom_arabe')
@@ -149,7 +149,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="text-muted" for="">{{ __('message.Prenom_arabe') }}</label>
+                                    <label class="text-muted" for="">{{ __('message.prenom_arabe') }}</label>
                                     <input class="form-control rounded" type="text" placeholder=""
                                         value="{{ $edit->Prenom_arabe }}" name="Prenom_arabe">
                                     @error('Prenom_arabe')
@@ -159,7 +159,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="text-muted"
-                                        for="">{{ __('message.Niveau_Scoliare') }}</label>
+                                        for="">{{ __('message.niveau_Scolaire') }}</label>
                                     <input class="form-control rounded" type="text" placeholder=""
                                         value="{{ $edit->Niveau_Scolaire }}" name="Niveau_Scolaire">
                                     @error('Niveau_Scolaire')
@@ -179,7 +179,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label class="text-muted" for="">{{ __('message.Diplome') }}</label>
+                                    <label class="text-muted" for="">{{ __('message.diplome') }}</label>
                                     <select class="form-control rounded" placeholder="" name="Diplome">
                                         <option selected value="{{ $edit->Diplome }}">{{ $edit->Diplome }} </option>
                                         <option value="oui">Oui</option>
@@ -190,7 +190,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="text-muted" for="">{{ __('message.Etudiant_actif') }}</label>
+                                    <label class="text-muted" for="">{{ __('message.etudiant_actif') }}</label>
                                     <select class="form-control rounded" placeholder="" name="Etudiant_actif">
                                         <option selected value="{{ $edit->Etudiant_actif }}">
                                             {{ $edit->Etudiant_actif }} </option>
@@ -203,7 +203,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="text-muted"
-                                        for="">{{ __('message.Date_inscription') }}</label>
+                                        for="">{{ __('message.date_inscription') }}</label>
                                     <input class="form-control rounded" value="{{ $edit->Date_inscription }}"
                                         type="date" placeholder="" name="Date_inscription">
                                     @error('Date_inscription')

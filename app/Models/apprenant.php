@@ -16,7 +16,7 @@ class Apprenant extends Model
         "Nom",
         "Prenom",
         "Email",
-        "Phone",
+        "Numero_telephone",
         "Adress",
         "CIN",
         "Date_naissance",
@@ -29,6 +29,7 @@ class Apprenant extends Model
         "Nom_arabe",
         "Prenom_arabe",
         "Niveau_Scolaire",
+        "Group_id",
     ];
     public function groups(){
         return $this->belongsToMany(Groupes::class, 'groupes_apprenant');

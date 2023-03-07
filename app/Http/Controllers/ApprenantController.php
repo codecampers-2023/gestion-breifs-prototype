@@ -34,28 +34,7 @@ class ApprenantController extends Controller
         $apprenant =Apprenant::paginate(6);
         return view('apprenants.index',['groupes'=>$groupes,'data'=>$apprenant]);
     }
-    // public function filter_group(Request $request){
-    //     if($request->has('filter') && !empty($request->filter)){
-    //         $apprenants = DB::table('Apprenant')
-    //         ->select("*" )
-    //             ->join('groupes_apprenant', 'Apprenant.id', '=', 'groupes_apprenant.Apprenant_id')
-    //             ->join('Groupes', 'groupes_apprenant.Groupe_id', '=', 'Groupes.id')
-    //             ->where('Groupes.id','Like','%'.$request->filter.'%')
-    //             ->get();
-    //             return response(['dataapprenants'=>$apprenants]);
-    //     }
-    //     else{
-    //         $apprenants=Apprenant::all();
-    //         return response(['dataapprenants'=>$apprenants]);
-    //         dd($apprenants);
-    //     }
-
-    // }
-    // public function search_apprenant(Request $request){
-    //     $searchapprenat=Apprenant::where('Nom','Like','%'.$request->searchapprenant.'%')->get();
-    //     return response(['searchapprenat'=>$searchapprenat]);
-
-    // }
+   
 
     function fetch_data(Request $request)
     {
@@ -79,9 +58,7 @@ class ApprenantController extends Controller
         $query = $request->get('query');
       $data = DB::table('apprenant')
             ->select("*" )
-                ->join('groupes_apprenant', 'apprenant.id', '=', 'groupes_apprenant.Apprenant_id')
-                ->join('Groupes', 'groupes_apprenant.Groupe_id', '=', 'Groupes.id')
-                ->where('Groupes.id','Like','%'.$query.'%')
+                ->where('Group_id','Like','%'.$query.'%')
                 ->paginate(6);
                 // dd($data);
                 return view('apprenants.apprenant_data', compact('data'))->render();
@@ -112,44 +89,46 @@ class ApprenantController extends Controller
      */
     public function store(Request $request)
     {
+       
 
          $validation = $request->validate([
             'Nom' => 'required|max:255',
             'Prenom' => 'required|max:255',
             'Email' => 'required|email|unique:apprenant',
-            'Phone' => 'required|max:255',
+            'Numero_telephone' => 'required|max:255',
             'Adress' => 'required|max:255',
             'CIN' => 'required|max:255',
             'Date_naissance' => 'required|date',
             'Image' => 'required',
 
-            'Etudiant_actif' => 'required|in:true,false',
+            'Etudiant_actif' => 'required|in:True,false',
             'Date_inscription' => 'required|date',
-            'Sexe' => 'required|in:male,female',
+            'Sexe' => 'required|in:Homme,Femme',
             'Diplome' => 'required|in:non,oui',
             'Lieu_naissance' => 'required|max:255',
             'Nom_arabe' => 'required|max:255',
             'Prenom_arabe' => 'required|max:255',
             'Niveau_Scolaire' => 'required|max:255',
+            'Group_id' => 'max:255',
         ]);
-
-
+        
+        
         if($request->has('Image')){
-        $file=$request->Image;
-        $Image=time(). '_' .$file->getClientOriginalName();
-        $file->move(public_path('images/apprenant'),$Image);
+            $file=$request->Image;
+            $Image=time(). '_' .$file->getClientOriginalName();
+            $file->move(public_path('images/apprenant'),$Image);
         }
-
-       $create =  Apprenant::create([
+        
+        $create =  Apprenant::create([
             'Nom'=>$request->Nom,
             'Prenom'=>$request->Prenom,
             'Email'=>$request->Email,
-            'Numero_telephone'=>$request->Phone,
+            'Numero_telephone'=>$request->Numero_telephone,
             'Adress'=>$request->Adress,
             'CIN'=>$request->CIN,
             'Date_naissance'=>$request->Date_naissance,
             'Image'=>$Image,
-
+            
             "Etudiant_actif"=>$request->Etudiant_actif,
             "Date_inscription"=>$request->Date_inscription,
             "Sexe"=>$request->Sexe,
@@ -158,9 +137,9 @@ class ApprenantController extends Controller
             "Nom_arabe"=>$request->Nom_arabe,
             "Prenom_arabe"=>$request->Prenom_arabe,
             "Niveau_Scolaire"=>$request->Niveau_Scolaire,
-
+            "Group_id"=>$request->Group_id,
         ]);
-
+        // dd($create);
         return redirect()->route('apprenant.index');
     }
 

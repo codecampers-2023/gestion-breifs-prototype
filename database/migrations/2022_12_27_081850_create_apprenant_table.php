@@ -32,6 +32,8 @@ return new class extends Migration
             $table->string("Nom_arabe")->nullable();
             $table->string("Prenom_arabe")->nullable();
             $table->string("Niveau_Scolaire")->nullable();
+            $table->unsignedInteger("Group_id")->nullable();
+            $table->foreign('Group_id')->references('id')->on('groupes')->onDelete('cascade');
         });
 
     }
@@ -45,3 +47,4 @@ return new class extends Migration
         Schema::dropIfExists('apprenant');
     }
 };
+

@@ -69,7 +69,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Etudiant_actif') }}</label>
+                                        <label class="text-muted" for="">{{ __('message.etudiant_actif') }}</label>
                                         <select class="form-control rounded" placeholder="" name="Etudiant_actif">
                                             <option selected value="{{ $edit->Etudiant_actif }}">
                                                 {{ $edit->Etudiant_actif }} </option>
@@ -82,7 +82,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="text-muted"
-                                            for="">{{ __('message.Date_inscription') }}</label>
+                                            for="">{{ __('message.date_inscription') }}</label>
                                         <input class="form-control rounded" value="{{ $edit->Date_inscription }}"
                                             type="date" placeholder="" name="Date_inscription">
                                         @error('Date_inscription')
@@ -90,7 +90,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label class="text-muted" for="">{{ __('message.Sexe') }}</label>
+                                        <label class="text-muted" for="">{{ __('message.sexe') }}</label>
                                         <select class="form-control rounded" placeholder="" name="Sexe">
                                             <option selected value="{{ $edit->Sexe }}"> {{ $edit->Sexe }} </option>
                                             <option value="male">Homme</option>
@@ -112,7 +112,7 @@
 
                                     <div class="form-group">
                                         <label class="text-muted"
-                                            for="">{{ __('message.date_naissance') }}</label>
+                                            for="">{{ __('message.lieu_naissancee') }}</label>
                                         <input class="form-control rounded" value="{{ $edit->Date_naissance }}"
                                             type="date" placeholder="" name="Date_naissance">
                                         @error('Date_naissance')
@@ -244,7 +244,7 @@
 
 
                                 <div class="d-flex justify-content-between">
-                                    <button class="btn  btn-primary">{{ __('message.add') }}</button>
+                                    <a  href="{{ route('apprenant.index') }}" class="btn  btn-primary">{{ __('message.add') }}</a>
                                     <a class="btn  btn-secondary"
                                         href="{{ route('apprenant.index') }}">{{ __('message.cancel') }}</a>
                                 </div>

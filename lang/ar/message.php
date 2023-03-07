@@ -67,15 +67,17 @@ return[
     'btn_affecter'=> 'تعيين',
     'title1'=>'إدارة المتعلم',
     'apprenant'=>'قائمة المتعلمين',
-    "sexe"=>'الجنس',
-     "nom_arabe"=> "الاسم  باللغة العربية",
+    'sexe'=>'الجنس',
+     'nom_arabe'=> "الاسم  باللغة العربية",
      "prenom_arabe"=> "الاسم الأول باللغة العربية",
-     "lieu_naissance"=> "مكان الولادة",
-     "niveau_Scolaire"=> "مستوى مدرسي",
-     "etudiant_actif"=> "طالب نشط",
-     "date_inscription"=> "تاريخ التسجيل",
-     "diplome"=> "الشهادة",
-     "diplome"=> "الشهادة",
+     'lieu_naissance'=> "مكان الولادة",
+     'niveau_Scolaire'=> "مستوى مدرسي",
+     'etudiant_actif'=> "طالب نشط",
+     'date_inscription'=> "تاريخ التسجيل",
+     'diplome'=> "الشهادة",
+     'diplome'=> "الشهادة",
+     
+     
 
 ]
 

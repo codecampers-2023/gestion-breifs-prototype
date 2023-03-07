@@ -8,12 +8,7 @@
           <div class="col-sm-6">
             <h1>{{__('message.title1')}}</h1>
           </div>
-          {{-- <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-
-            </ol>
-          </div> --}}
+        
         </div>
       </div>
     </section>
@@ -101,78 +96,7 @@
 </div>
 </div>
 </div>
-{{-- <script type="text/javascript">
-    $('#filter').on('change',function(){
-        $value=$(this).val();
-        $.ajax({
-            type:'get',
-            url:'{{route("filter_group")}}',
-            data:{'filter':$value},
-            success:function(data){
-                console.log(data);
-                var apprenants=data.dataapprenants;
-                var html='';
-                if(apprenants.length>0){
-                    for(let i=0;i<apprenants.length;i++){
-                        html+=`<tr>
-                                    <td> <img src="{{asset('./imageapprent')}}/${apprenants[i]['Image']}" alt="" width="80" height="80"></td>
-                                    <td>${apprenants[i]['Nom']}</td>
-                                    <td>${apprenants[i]['Prenom']}</td>
-                                    <td><a  href="/apprenant/${apprenants[i]['id']}/edit" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <form method="post" action="/apprenant/${apprenants[i]['id']}">
-                                        <input type="hidden" name="_method" value="Delete">\
-                                        <input type="hidden" name="_token" value='{{ csrf_token() }}'>
-                                        <button id="trash-icon" type='submit'>
-                                    <a  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                </button></td>
-                                </tr>`;
-                    }
-                }
-                else{
-                    html+=`<tr>
-                    <td>no apprenant</td>
-                    </tr>`;
-                }
-                $('#table1').html(html);
-            }
-        });
-    })
-    $('#search').on('keyup',function(){
-            $value=$(this).val();
-            $.ajax({
-                type:'get',
-                url:'{{route("searchapprenant")}}',
-                data:{'searchapprenant':$value},
-                success:function(data){
-                    console.log(data);
-                    var apprenants=data.searchapprenat;
-                    var html='';
-                if(apprenants.length>0){
-                    for(let i=0;i<apprenants.length;i++){
-                        html+=`<tr>
-                                    <td> <img src="{{asset('./imageapprent')}}/${apprenants[i]['Image']}" alt="" width="80" height="80"></td>
-                                    <td>${apprenants[i]['Nom']}</td>
-                                    <td>${apprenants[i]['Prenom']}</td>
-                                    <td><a  href="/apprenant/${apprenants[i]['id']}/edit" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <form method="post" action="/apprenant/${apprenants[i]['id']}">
-                                        <input type="hidden" name="_method" value="Delete">\
-                                        <input type="hidden" name="_token" value='{{ csrf_token() }}'>
-                                        <button id="trash-icon" type='submit'>
-                                    <a  class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                </button></td>
-                                </tr>`;
-                    }
-                }
-                else{
-                    html+='<tr>\
-                    <td>no apprenant</td>\
-                    </tr>';
-                }
-                $('#table1').html(html);
-            }
-        });
-    })
-</script>      --}}
+
 <script>
 $(document).ready(function(){
 function fetch_data(page,query)
@@ -204,9 +128,6 @@ console.log(page);
 console.log(query);
 fetch_data(page,query);
 
-//  var str = '/pagination/fetch_data?page=3'
-//   var array = str.split("page=")[0];
-//   console.log(array);
 });
 
 ////////////filter
@@ -239,10 +160,6 @@ var query = $('#filter').val();
 console.log(page);
 console.log(query);
 fetch2_data(page,query);
-
-//  var str = '/pagination/fetch_data?page=3'
-//   var array = str.split("page=")[0];
-//   console.log(array);
 });
 }
 

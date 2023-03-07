@@ -71,8 +71,10 @@ return[
     "nom_arabe" => "Nom en arabe",
     "prenom_arabe" => "Prénom en arabe",
     "lieu_naissance" => "Lieu de naissance",
+    "Date_naissance"=> "Lieu de naissance",
     "niveau_Scolaire" => "Niveau d'études",
     "etudiant_actif" => "Étudiant actif",
+    //"etudiant_actif"=> "Étudiant actif",
     "date_inscription" => "Date d'inscription",
     "diplome" => "Diplôme"
 

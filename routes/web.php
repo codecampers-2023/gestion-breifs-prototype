@@ -22,8 +22,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 
 
-
-
 Route::middleware('auth')->group(function () {
     Route::view('/', 'dashboard')->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,7 +34,6 @@ require __DIR__.'/auth.php';
 
 
 Route::group(['prefix'=>LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath',"auth"]],function(){
-
       //Apprenant
       Route::resource('apprenant', ApprenantController::class);
       route::get('/pagination/fetch2_data',[ApprenantController::class,'fetch2_data'])->name('/pagination/fetch2_data');
